@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+// import { ConfigService } from '@nestjs/config';
 import { NatsOptions, Transport } from '@nestjs/microservices';
 import {
   HealthCheck,
@@ -13,15 +13,14 @@ export class HealthController {
   constructor(
     private health: HealthCheckService,
     private microservice: MicroserviceHealthIndicator,
-    private mongooseHealth: MongooseHealthIndicator,
-    private configService: ConfigService,
+    private mongooseHealth: MongooseHealthIndicator, // private configService: ConfigService,
   ) {}
 
   @Get('/healthcheck')
   @HealthCheck()
   check() {
     // const kafkaOptions = this.configService.get('msgbroker.kafka');
-    const natsOptions = this.configService.get('msgbroker.nats');
+    // const natsOptions = this.configService.get('msgbroker.nats');
     // const mongodbOptions = this.configService.get('db.mongodb');
 
     const checkList = [];
@@ -35,15 +34,15 @@ export class HealthController {
     //     }),
     //   );
     // }
-    if (natsOptions) {
-      checkList.push(async () =>
-        this.microservice.pingCheck<NatsOptions>('nats', {
-          transport: Transport.NATS,
-          options: natsOptions,
-          timeout: 10000,
-        }),
-      );
-    }
+    // if (natsOptions) {
+    //   checkList.push(async () =>
+    //     this.microservice.pingCheck<NatsOptions>('nats', {
+    //       transport: Transport.NATS,
+    //       options: natsOptions,
+    //       timeout: 10000,
+    //     }),
+    //   );
+    // }
     // if (mongodbOptions) {
     //   checkList.push(async () => this.mongooseHealth.pingCheck('mongodb'));
     // }

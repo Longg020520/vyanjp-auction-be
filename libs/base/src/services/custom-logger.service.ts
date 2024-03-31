@@ -1,6 +1,6 @@
 import { APM_INSTANCE } from '@app/apm';
 import { ConsoleLogger, Inject, Injectable, LogLevel } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+// import { ConfigService } from '@nestjs/config';
 import { Agent } from 'elastic-apm-node';
 
 const isString = (val: any): val is string => typeof val === 'string';
@@ -10,13 +10,13 @@ export class CustomLoggerService extends ConsoleLogger {
   logColor: boolean;
 
   constructor(
-    private configService: ConfigService,
+    // private configService: ConfigService,
     @Inject(APM_INSTANCE) private apm: Agent,
   ) {
     super('NoContext');
 
     // console.log(new Date(), '>>>>>>>>> CustomLogger init', !!apm);
-    this.logColor = this.configService.get('app.logEnv') == 'local';
+    // this.logColor = this.configService.get('app.logEnv') == 'local';
   }
 
   private getContextAndMessages(args: unknown[]) {

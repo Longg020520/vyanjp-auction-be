@@ -1,7 +1,7 @@
 // import { AllExceptionsFilter } from '@app/base/exception-filters';
 // import { CustomLoggerService } from '@app/base/services/custom-logger.service';
 import { INestApplication, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+// import { ConfigService } from '@nestjs/config';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 // import { Logger as PinoLogger } from 'nestjs-pino';
 import { ValidationPipe } from '../pipes';
@@ -23,31 +23,31 @@ export async function bootstrapHelper(
   // app.useGlobalFilters(new AllExceptionsFilter());
   const logger = new Logger(`bootstrap-${options.appName}`);
 
-  const configService = app.get(ConfigService);
+  // const configService = app.get(ConfigService);
 
-  // microservice #1 => dùng cho message partern, request-response
-  if (options.enableNats) {
-    app.connectMicroservice<MicroserviceOptions>(
-      {
-        transport: Transport.NATS,
-        options: configService.get('msgbroker.nats'),
-      },
-      {
-        inheritAppConfig: true,
-      },
-    );
-  }
+  // // microservice #1 => dùng cho message partern, request-response
+  // if (options.enableNats) {
+  //   app.connectMicroservice<MicroserviceOptions>(
+  //     {
+  //       transport: Transport.NATS,
+  //       options: configService.get('msgbroker.nats'),
+  //     },
+  //     {
+  //       inheritAppConfig: true,
+  //     },
+  //   );
+  // }
 
-  // microservice #2 => dùng cho event, emit only
-  if (options.enableKafka) {
-    app.connectMicroservice<MicroserviceOptions>(
-      {
-        transport: Transport.KAFKA,
-        options: configService.get('msgbroker.kafka'),
-      },
-      { inheritAppConfig: true },
-    );
-  }
+  // // microservice #2 => dùng cho event, emit only
+  // if (options.enableKafka) {
+  //   app.connectMicroservice<MicroserviceOptions>(
+  //     {
+  //       transport: Transport.KAFKA,
+  //       options: configService.get('msgbroker.kafka'),
+  //     },
+  //     { inheritAppConfig: true },
+  //   );
+  // }
 
   app.enableShutdownHooks();
   await app.startAllMicroservices();

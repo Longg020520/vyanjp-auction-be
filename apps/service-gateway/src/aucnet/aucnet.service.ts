@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+// import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
 import {
   CategoryAucnetDocument,
@@ -60,7 +60,7 @@ export class AucnetService {
     @InjectModel(ProductAucnetDetailDocument.name)
     private readonly productAucnetDetailModel: Model<ProductAucnetDetailDocument>,
 
-    private readonly configService: ConfigService,
+    // private readonly configService: ConfigService,
     private readonly httpService: HttpService,
   ) {}
 
@@ -72,6 +72,7 @@ export class AucnetService {
   }
 
   async getListProductAucnet(query: QueryParse) {
+    console.log(query, 'query');
     const data = await new ClientQuery(this.listProductAucnetModel)
       .query(query)
       .build();
@@ -82,7 +83,6 @@ export class AucnetService {
     const data = await this.productAucnetDetailModel.findOne({
       uketsukeBng,
     });
-    console.log(data, 'data22222');
     return data;
   }
 

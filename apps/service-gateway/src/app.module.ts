@@ -1,9 +1,9 @@
 import { BaseModule } from '@app/base';
 import { Module } from '@nestjs/common';
-import {
-  // ConfigModule,_
-  ConfigService,
-} from '@nestjs/config';
+// import {
+// ConfigModule,_
+// ConfigService,
+// } from '@nestjs/config';
 import { ClientNats } from '@nestjs/microservices';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpResponseInterceptor } from './common/intercepters/http-response.intercepter';
@@ -27,7 +27,7 @@ import { AucnetModule } from './aucnet/aucnet.module';
           uri: 'mongodb+srv://arrpusht:gtM5TvEUzjvTDo7z@cluster0.ds7ayqu.mongodb.net/service-auction',
         };
       },
-      inject: [ConfigService],
+      // inject: [ConfigService],
     }),
     // ClientsModuleGlobal.registerAsync([
     //   {

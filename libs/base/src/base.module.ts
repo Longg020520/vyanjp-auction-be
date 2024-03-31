@@ -21,15 +21,15 @@ import { LoggerModule } from 'nestjs-pino';
 @Global()
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      load: [
-        () =>
-          configuration({
-            path: process.env.configfile || join(__dirname, './config.yaml'),
-          }),
-      ],
-      isGlobal: true,
-    }),
+    // ConfigModule.forRoot({
+    //   load: [
+    //     () =>
+    //       // configuration({
+    //       //   path: process.env.configfile || join(__dirname, './config.yaml'),
+    //       // }),
+    //   ],
+    //   isGlobal: true,
+    // }),
 
     HealthModule,
     LoggerModule.forRoot({
