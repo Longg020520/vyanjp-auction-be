@@ -193,9 +193,6 @@ export const EVENT_CONFIG = {
   },
 
   // SVC GATEWAY
-  SVC_GATEWAY: {
-    SEND_SLACK_NOTIFY: 'svc.gateway.send.slack.notify',
-  },
 
   // download excel
   DOWNLOAD_EXCEL_TOTAL_TRANSACTION: 'DOWNLOAD_EXCEL_TOTAL_TRANSACTION',

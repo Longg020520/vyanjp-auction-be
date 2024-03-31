@@ -16,7 +16,6 @@ import { ClientQuery } from '@app/common';
 // import { Model } from 'mongoose';
 // import { firstValueFrom } from 'rxjs';
 // import { NotifyDocument } from './schemas/notifi.schemas';
-// import { SlackMessageType } from './types/slack-notify.type';
 // import * as moment from 'moment';
 
 const listGenreCd = {

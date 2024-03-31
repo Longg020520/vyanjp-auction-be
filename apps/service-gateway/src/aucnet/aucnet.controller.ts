@@ -6,7 +6,7 @@ import { QueryParse } from '@app/contracts';
 export class AucnetController {
   constructor(private readonly aucnetService: AucnetService) {}
   @Get('/test')
-  async sendSlackNotify() {
+  async test() {
     try {
       return await this.aucnetService.tets();
     } catch (error) {

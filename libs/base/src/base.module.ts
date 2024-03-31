@@ -4,7 +4,7 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { DataInterceptor } from './interceptors';
 import {
   ConfigModule,
-  ConfigService,
+  // ConfigService,
   //  ConfigService
 } from '@nestjs/config';
 import { join } from 'path';
@@ -14,9 +14,9 @@ import { HealthModule } from '@app/health';
 // import { ApmModule } from '@app/apm';
 import { AllExceptionsFilter } from '@app/base/exception-filters';
 import { LoggerModule } from 'nestjs-pino';
-import { SentryModule } from '@ntegral/nestjs-sentry';
-import * as yaml from 'js-yaml';
-import * as fs from 'fs';
+// import { SentryModule } from '@ntegral/nestjs-sentry';
+// import * as yaml from 'js-yaml';
+// import * as fs from 'fs';
 
 @Global()
 @Module({
@@ -38,21 +38,21 @@ import * as fs from 'fs';
         { method: RequestMethod.ALL, path: 'healthz' },
       ],
     }),
-    SentryModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => {
-        const sentry = await configService.get('sentry');
-        console.log('[Base module] sentry config', sentry);
-        return {
-          dsn: sentry.dns,
-          debug: true,
-          environment: sentry.env,
-          logLevels: ['debug'], //based on sentry.io loglevel //
-        };
-      },
+    // SentryModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   useFactory: async (configService: ConfigService) => {
+    //     const sentry = await configService.get('sentry');
+    //     console.log('[Base module] sentry config', sentry);
+    //     return {
+    //       dsn: sentry.dns,
+    //       debug: true,
+    //       environment: sentry.env,
+    //       logLevels: ['debug'], //based on sentry.io loglevel //
+    //     };
+    //   },
 
-      inject: [ConfigService],
-    }),
+    //   inject: [ConfigService],
+    // }),
   ],
   providers: [
     {
