@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/contracts": [
+        "libs/contracts/src"
+      ],
+      "@app/base": [
+        "libs/base/src"
+      ],
+      "@app/base/*": [
+        "libs/base/src/*"
+      ],
+      "@app/apm": [
+        "libs/apm/src"
+      ],
+      "@app/apm/*": [
+        "libs/apm/src/*"
+      ],
+      "@app/health": [
+        "libs/health/src"
+      ],
+      "@app/health/*": [
+        "libs/health/src/*"
+      ],
+      "@app/testing": [
+        "libs/testing/src"
+      ],
+      "@app/testing/*": [
+        "libs/testing/src/*"
+      ],
+    }
+  }
+}
