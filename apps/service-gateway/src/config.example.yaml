@@ -1,22 +1,3 @@
 app:
   port: 27000
   logEnv: local
-
-jwt:
-  adminsecret: "gfhjknlmdak"
-  adminexpiresIn: 86400000
-
-  OSAsecret: "BRX1ds53G06G"
-  OSAexpiresIn: 86400000
-
-  SSAsecret: "ZfeywY3iEiiKt"
-  SSAexpiresIn: 86400000
-
-db:
-  mongodb:
-    uri: mongodb://localhost:27017/service-gateway
-
-msgbroker:
-  nats:
-    servers: ["103.127.207.183:4222"]
-    queue: nats-bill-queue
