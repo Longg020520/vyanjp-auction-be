@@ -20,13 +20,3 @@ msgbroker:
   nats:
     servers: ["103.127.207.183:4222"]
     queue: nats-bill-queue
-
-
-# # product
-# slach_bot:
-#   url: https://slack.com/api/chat.postMessage
-#   botToken: xoxb-336729166902-6033482939889-3Qs7Nl0t4MjOMTL3Xonpwzsj
-#   receiverChanel: project-edubill-oper
-
-
-
