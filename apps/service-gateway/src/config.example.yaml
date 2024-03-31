@@ -1,3 +1,0 @@
-app:
-  port: 27000
-  logEnv: local

@@ -50,22 +50,3 @@ export class SendNotificationDto {
   @IsOptional()
   date?: number;
 }
-
-export class SetBNPWalletServiceKeyDto {
-  @IsEmail()
-  email: string;
-
-  @IsString()
-  @IsOptional()
-  apiKey: string;
-
-  @IsString()
-  @IsOptional()
-  apiSecret: string;
-}
-
-export class ProcessBinancePayTransactionDto {
-  @IsString()
-  @IsNotEmpty()
-  transactionId: string;
-}
