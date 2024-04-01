@@ -9,6 +9,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpResponseInterceptor } from './common/intercepters/http-response.intercepter';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AucnetModule } from './aucnet/aucnet.module';
+import { StarBuyerModule } from './starbuyer/starbuyer.module';
 
 @Module({
   providers: [
@@ -40,6 +41,7 @@ import { AucnetModule } from './aucnet/aucnet.module';
     //   },
     // ]),
     AucnetModule,
+    StarBuyerModule,
   ],
 })
 export class AppModule {}
