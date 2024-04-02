@@ -92,6 +92,7 @@ export class ProductStarBuyerDetailDocument extends Document {
     Accessories: string;
     purchasedate: string;
     ALLUexhibiting: string;
+    ProductID: string;
     SizeW: string;
     SizeH: string;
     SizeD: string;

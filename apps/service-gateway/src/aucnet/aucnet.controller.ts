@@ -5,19 +5,19 @@ import { QueryParse } from '@app/contracts';
 @Controller('')
 export class AucnetController {
   constructor(private readonly aucnetService: AucnetService) {}
-  @Get('/test')
-  async test() {
+  @Get('/aucnet/create/product/list')
+  async createListProduct() {
     try {
-      return await this.aucnetService.tets();
+      return await this.aucnetService.createListProduct();
     } catch (error) {
       return true;
     }
   }
 
-  @Get('/create/product')
+  @Get('/aucnet/create/product/detail')
   async createProduct() {
     try {
-      return await this.aucnetService.createManyProduct();
+      return await this.aucnetService.createManyProductDetail();
     } catch (error) {
       return true;
     }

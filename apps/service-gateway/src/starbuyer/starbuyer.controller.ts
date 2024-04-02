@@ -42,6 +42,16 @@ export class StarBuyerController {
     }
   }
 
+  @Get('/starbuyer/product/productNumber')
+  async getListProductStarbuyerNumber(@Query() query: QueryParse) {
+    // /starbuyer/product/productNumber?limit=100&offset=0
+    try {
+      return await this.starBuyerService.getListProductStarbuyerNumber(query);
+    } catch (error) {
+      return true;
+    }
+  }
+
   @Get('/starbuyer/product/detail/:productNumber')
   async getProductDetailAucnet(@Param('productNumber') productNumber: string) {
     try {

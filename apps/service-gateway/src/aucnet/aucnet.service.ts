@@ -86,7 +86,7 @@ export class AucnetService {
     return data;
   }
 
-  async tets() {
+  async createListProduct() {
     const size = 1;
     const pageNumber = 0;
     const genreCdList = 9;
@@ -124,9 +124,9 @@ export class AucnetService {
       };
     });
 
-    // await this.listProductAucnetModel.insertMany(dataInsert);
+    await this.listProductAucnetModel.insertMany(dataInsert);
 
-    console.log(data.data, 'res11111');
+    // console.log(data.data, 'res11111');
 
     return {
       message: 'success',
@@ -134,11 +134,11 @@ export class AucnetService {
 
     // return await this.categoryAucnetModel.find({});
   }
-  async createManyProduct() {
+  async createManyProductDetail() {
     const data = await this.listProductAucnetModel
       .find({})
-      .limit(14000)
-      .skip(3051);
+      .limit(16000)
+      .skip(0);
     // console.log(data, 'data');
 
     // const dataCreate = [];
